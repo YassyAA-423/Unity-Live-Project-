@@ -11,11 +11,11 @@
  * [Player Behavior](#player-behavior)
  * [Level Design](#level-design)
  * [Collectables Obstacles](#collectables-obstacles)
- * [Gameplay Model](#game-model)
+ * [Gameplay Model](#gameplay-model)
  * [New Level](#new-level)
  * [Animations](#animations)
  * [Enemies](#enemies)
- * [Sound Effects](#sound-effect)
+ * [Sound Effects](#sound-effects)
  * [Polish](#polish)
  * [Skills](#skills)
 ##
@@ -23,14 +23,9 @@
 ## Game Scenes
 
 &emsp; In this story, I had to build the scenes for the game. Main Menu, the functioning buttons, a Game Scene, and an End Scene with a replay and quit button. I didn’t want to overcomplicate it and made it a very simple, generic design for the first scene. I also wanted to ensure the scene building worked, so I added a button to the game scene to go to the main menu, gameplay, and the end scene to play again. This was around the time I wanted to go a slightly different route than the classic pixel frogger. I wanted to try applying a different theme to the game and settle on the name Dungeon Frogger.
-    
-
-<p align=center>
-<video src="image/DungeonFroggerScenes.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video>
+<p align="center">   
+<img width="790" height="446" alt="DungeonFroggerScenes" src="https://github.com/user-attachments/assets/87054648-28ad-40f9-89f7-4cfc58c466b6" />
 </p>
-<br/>
 
 ```c#
 {
@@ -115,10 +110,9 @@
 ## Level Design
 &emsp; For this story, I was tasked with making the actual level itself. Now, from the beginning, I decided to go with the feeling of Frogger instead of the classic design. I picked the Kings and Pigs and Pirate Bombs for the tiles. (Created by Pixel Frog:https://pixelfrog-assets.itch.io/kings-and-pigs and https://pixelfrog-assets.itch.io/pirate-bomb) To create the layout of the level. I did my best to still create ‘roads’ and ‘logs’ in a way. I also added A tile rule because I saw I would have to make another level in a future story. I did make the level too big for the camera, so I added a Cinemachine and a world confiner that follows the player.
 <br/>
-<p align=center>
-    <video src="image/FroggerLevelLayout.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video>
+
+<p align="center">
+<img width="790" height="446" alt="FroggerLevelLayout" src="https://github.com/user-attachments/assets/76744a80-8ad9-476e-8e3d-1f7ce6696e14" />
 </p>
 
 
@@ -184,9 +178,8 @@
 
 ```
 <p align=center>
-    <video src="image/FroggerMovingPlatforms.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video>
+
+Platform
 </p>
     
 
@@ -247,9 +240,9 @@ if (water != null && !willBeOnPlatform)
 
 (Apologies for the strange movement; I did take the screenshot when I was editing the movement. I was trying to make it more snappy)
 <p align=center>
-     <video src="image/FroggerWinCondition.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video></p>
+    <img width="784" height="440" alt="FroggerWinCondition" src="https://github.com/user-attachments/assets/ff376236-f55e-40ed-b1bb-9ec3a8e0889d" />
+
+</p>
 
 
 ### Losing 
@@ -258,13 +251,9 @@ if (water != null && !willBeOnPlatform)
 
 (I know this also looks strange since there is no animation indicating the player is reacting to the damage. But rest assured the player is getting hurt.)
 <p align=center>
-      <video src="image/FroggerLoseCondition.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video></p>
+<img width="784" height="440" alt="FroggerLoseCondition" src="https://github.com/user-attachments/assets/3bbf6bd0-c2a0-42c7-a57f-c70f9e22a8f4" />
+</p>
     
-```c#
-
-```
 
 ##
 *Jump To: [Page Top](#introduction), [Player Behavior](#player-behavior), [Level Design](#level-design), [Collectables Obstacles](#collectables-obstacles), [Gameplay Model](#game-model), [New Level](#new-level), [Animations](#animations), [Enemies](#enemies), [Sound Effects](#sound-effects), [Polish](#polish), [Skills](#skills)*
@@ -277,9 +266,8 @@ if (water != null && !willBeOnPlatform)
 &emsp; Added an animation to the door; this one was trickier. It wasn’t letting the player through. It took a little rewriting, but I was able to get the player to go through. Add the animation to trigger when the player gets the key and is close enough to the door.
 
 <p align=center>
-     <video src="image/FroggerAnimation.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video></p>
+   <img width="740" height="440" alt="FroggerAnimation" src="https://github.com/user-attachments/assets/49503813-4d5e-47a2-a80b-5410e6117cea" />
+</p>
 
 ##
 *Jump To: [Page Top](#introduction), [Player Behavior](#player-behavior), [Level Design](#level-design), [Collectables Obstacles](#collectables-obstacles), [Gameplay Model](#game-model), [New Level](#new-level), [Animations](#animations), [Enemies](#enemies), [Sound Effects](#sound-effects), [Polish](#polish), [Skills](#skills)*
