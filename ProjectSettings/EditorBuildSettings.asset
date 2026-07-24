@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Frogger/Scene/Frogger_Level02.unity
     guid: 2b2c447b17c8e584b9a3d9ce5a1d09ef
   - enabled: 1
+    path: Assets/Frogger/Scene/Frogger_Level03.unity
+    guid: 89d3f5298bc93bd4c901c7ef14e5598a
+  - enabled: 1
     path: Assets/Frogger/Scene/Frogger_WinScreen.unity
     guid: b395b5993b1d58a408c15d271ac1037c
   - enabled: 1

@@ -11,11 +11,16 @@ public class Frogger_Player : MonoBehaviour
 
     Animator Froggeranimator;
 
+    AudioSource PlayerAudioSource;
+
+    [SerializeField] AudioClip damageSoundSFX, jumpSoundSFX; // Sound to play when the player takes damage
+
     private void Start()
     {
         //Get the Rigidbody2D component attached to the player game object and store it in the playerRigidBody2D variable for later use.
         playerRigidBody2D = GetComponent<Rigidbody2D>();
         Froggeranimator = GetComponent<Animator>();
+        PlayerAudioSource = GetComponent<AudioSource>();
     }
 
     private void Awake()
@@ -72,7 +77,7 @@ public class Frogger_Player : MonoBehaviour
         Vector3 destination = transform.position + direction;
         // Check for barriers at the destination point
         Collider2D platform = Physics2D.OverlapBox(destination, Vector2.one * 0.1f, 0f, LayerMask.GetMask("Environment"));
-        Collider2D enemy = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("Enemy"));
+        Collider2D enemy = Physics2D.OverlapBox(destination, Vector2.one * 0.3f, 0f, LayerMask.GetMask("Enemy"));
         Collider2D barrier = Physics2D.OverlapBox(destination, Vector2.one * 0.1f, 0f, LayerMask.GetMask("Barrier"));
 
         if (barrier != null)
@@ -125,6 +130,13 @@ public class Frogger_Player : MonoBehaviour
 
         // No barrier, move to the destination
         transform.position = destination;
+
+        if (PlayerAudioSource != null && jumpSoundSFX != null) 
+        { 
+            PlayerAudioSource.PlayOneShot(jumpSoundSFX); 
+        } else {
+            Debug.LogWarning("Missing AudioSource or jumpSoundSFX!"); 
+        }
     }
 
 
@@ -134,6 +146,15 @@ public class Frogger_Player : MonoBehaviour
     //This method will handle the logic for when the player takes damage, such as losing a life or respawning.
     private void playerDamage()
     {
+
+        if (PlayerAudioSource != null && damageSoundSFX != null)
+        {
+            PlayerAudioSource.PlayOneShot(damageSoundSFX);
+        }
+        else
+        {
+            Debug.LogWarning("Missing AudioSource or damageSoundSFX!");
+        }
         Debug.Log("Player hit by enemy!");
         Froggeranimator.SetTrigger("TakingDamage"); // Trigger the damage animation)
         FindAnyObjectByType<FroggerGameSession>().ProcessPlayerDeath(); // Process player death in the game session

@@ -8,8 +8,13 @@ public class FroggerGameSession : MonoBehaviour
 {
     //This class manages the game session, including player lives
     [SerializeField] int playerLives = 3;
+
+    [SerializeField] int keys = 0;
     //Reference to the UI text component that displays the player's lives
     [SerializeField] Text livesText;
+
+    [SerializeField] Text keysText;
+
     private int currentLives;
 
     private void Awake()
@@ -27,12 +32,36 @@ public class FroggerGameSession : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
     private void Start()
     {
-        //Initialize the lives text
-        livesText.text = playerLives.ToString();
+        ResetValues();
+        UpdateUI();
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject livesObj = GameObject.Find("LivesText");
+        GameObject keysObj = GameObject.Find("KeysText");
+
+        if (livesObj != null)
+            livesText = livesObj.GetComponent<Text>();
+
+        if (keysObj != null)
+            keysText = keysObj.GetComponent<Text>();
+
+        UpdateUI();
+    }
+
     //This method is called when the player dies, and it checks if the player has remaining lives
     public void ProcessPlayerDeath()
     {
@@ -44,7 +73,7 @@ public class FroggerGameSession : MonoBehaviour
         {
             //If the player has no more lives, reset the game session and load the first scene
             ResetGameSession();
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
         }
     }
 
@@ -63,6 +92,11 @@ public class FroggerGameSession : MonoBehaviour
         livesText.text = playerLives.ToString();
     }
 
+    public void AddKey()
+    {
+        keys++;
+        keysText.text = keys.ToString();
+    }
 
     //This method ensures that the player's lives do not exceed the maximum limit (3 in this case)
     public void MaxLives()
@@ -73,12 +107,34 @@ public class FroggerGameSession : MonoBehaviour
         }
     }
 
+
+    public void MaxKeys()
+    {
+        if (keys > 6)
+        {
+            keys = 6;
+        }
+    }
+
+    public void ResetValues()
+    {
+        playerLives = 3;
+        keys = 0;
+    }
+
+    private void UpdateUI()
+    {
+        if (livesText != null)
+            livesText.text = playerLives.ToString();
+
+        if (keysText != null)
+            keysText.text = keys.ToString();
+    }
+
     public void ResetGameSession()
     {
-        //Reset the player's lives to the initial value and load the first scene
+        ResetValues();
         SceneManager.LoadScene(0);
-        //this will destroy the game session object, allowing a new one to be created when the first scene is loaded
-        Destroy(gameObject);
     }
 
     public void NextLevel()
@@ -86,5 +142,4 @@ public class FroggerGameSession : MonoBehaviour
         //Load the next scene in the build index
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    }
+}

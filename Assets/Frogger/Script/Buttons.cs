@@ -17,6 +17,8 @@ public class Buttons : MonoBehaviour
     {
         // Reloads the currently active scene
         SceneManager.LoadScene(0);
+        FindAnyObjectByType<FroggerGameSession>().ResetGameSession();
+
     }
 
 

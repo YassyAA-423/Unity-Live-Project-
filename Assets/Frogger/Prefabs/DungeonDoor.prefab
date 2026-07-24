@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keysRequired: 3
+  doorOpenSound: {fileID: 8300000, guid: 9ee9d7258e1bf654bbcaa9619f34d781, type: 3}
 --- !u!61 &5556226904937076966
 BoxCollider2D:
   m_ObjectHideFlags: 0

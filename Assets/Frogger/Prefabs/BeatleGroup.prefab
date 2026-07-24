@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4816509417768165401}
+  - component: {fileID: 792696288055395379}
   m_Layer: 7
   m_Name: BeatleGroup
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4450595068634454033}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -1.4743125, z: -0.034886077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33,6 +34,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &792696288055395379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450595068634454033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa0afafbd4637643bf8aa7f1aca7b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection: {x: -1, y: 0}
+  moveSpeed: 3
+  size: 1
 --- !u!1001 &1714235285727539426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,6 +103,22 @@ PrefabInstance:
     - target: {fileID: 3069701701549583192, guid: 3156758c631dbed499842a1f021b2385, type: 3}
       propertyPath: m_Name
       value: BeatleEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Size.x
+      value: 0.74529904
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7669432
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.014429122
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0036073923
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3156758c631dbed499842a1f021b2385, type: 3}
@@ -149,6 +181,22 @@ PrefabInstance:
     - target: {fileID: 3069701701549583192, guid: 3156758c631dbed499842a1f021b2385, type: 3}
       propertyPath: m_Name
       value: BeatleEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Size.x
+      value: 0.72365487
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Size.y
+      value: 0.680367
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.010822117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069701701549583195, guid: 3156758c631dbed499842a1f021b2385, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03968072
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3156758c631dbed499842a1f021b2385, type: 3}
