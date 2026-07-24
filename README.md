@@ -179,7 +179,8 @@
 ```
 <p align=center>
 
-Platform
+
+
 </p>
     
 
@@ -286,11 +287,12 @@ if (water != null && !willBeOnPlatform)
 </video></p>
 
 &emsp; But this is where I notice a bug. The player would stop at the wall, but when you kept going towards the walls, the player would do tiny little movements that I didn’t notice before. I could get the player to slowly phase through the wall and out of the game.
- 
+
+
 <p align=center>
-    <video src="image/Bug.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video>
+ <img width="790" height="446" alt="BUG (1)" src="https://github.com/user-attachments/assets/85714dfa-aa20-4ba4-89cb-6a571dc0c139"/>
+</p>
+
 
 ### Humbling Experience
 
@@ -441,9 +443,7 @@ Sometimes it truly is just ONE line of code.
 ```
 
 <p align=center>
-    <video src="image/Enemy.mp4" autoplay loop muted playsinline width="70%">
-  Your browser does not support the video tag.
-</video>
+<img width="790" height="446" alt="Enemies" src="https://github.com/user-attachments/assets/e01ea0f3-488b-4997-a11e-5ee80142a513" />
 </p>
 
 
